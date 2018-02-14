@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import whatever else you like here
 
 // Declare your Component here
-class SomeComponent extends Component{
+class SideBar extends Component{
   render(){
     return (
       <div>Hello World</div>
@@ -11,4 +11,4 @@ class SomeComponent extends Component{
 }
 
 // export the component by name
-export default SomeComponent; 
+export default SideBar; 
