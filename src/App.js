@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import NavBar from './DisplayItems/NavBar';
-import SideBar from './DisplayItems/SideBar';
+import MainContainer from './DisplayItems/MainContainer';
+
 
 class App extends Component {
   render() {
     return (
       <div>
-        <NavBar/>
+       <MainContainer SideBar="Overview"/>
         <div className="container-fluid">
           <div className="row">
-          <SideBar />
             <div className=" col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <h1 className="page-header">Overview</h1>
               <div className="row">
