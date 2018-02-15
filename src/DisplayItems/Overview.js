@@ -2,10 +2,25 @@ import React, { Component } from 'react';
 // import whatever else you like here
 
 // Declare your Component here
-class Overview extends Component{
-  render(){
+class Overview extends Component {
+  render() {
     return (
-      <div>Hello World</div>
+      <div>
+        <h1 className='page-header'>Overview</h1>
+        <div className="row">
+          <div className="col-md-4">
+          <p>Placeholder</p>
+          </div>
+          <div className="col-md-4">
+          <p>Placeholder</p>
+          </div>
+          <div className="col-md-4">
+          <p>Placeholder</p>
+          </div>
+        </div>
+
+      </div>
+
     );
   }
 }

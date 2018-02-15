@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import MainContainer from './DisplayItems/MainContainer';
+import Overview from './DisplayItems/Overview';
 
 
 class App extends Component {
   render() {
     return (
       <div>
-       <MainContainer SideBar="Overview"/>
-        <div className="container-fluid">
+        <MainContainer SideBar="Overview">
+          <Overview />
+        </MainContainer>
+        {/* <div className="container-fluid">
           <div className="row">
             <div className=" col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
               <h1 className="page-header">Overview</h1>
@@ -122,8 +125,8 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div>*/}
       </div>
     );
   }
