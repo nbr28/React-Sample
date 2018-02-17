@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import whatever else you like here
 
@@ -41,7 +42,7 @@ class EmployeesPanel extends Component{
               </tbody>
             </table>
           </div>
-          <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
+          <Link to="/Employees" className="btn btn-primary form-control">View All Employee Data</Link>
         </div>
       </div>
     );
