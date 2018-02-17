@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MainContainer from '../DisplayItems/MainContainer';
 // import whatever else you like here
 
 // Declare your Component here
-class Employees extends Component{
+class Employees extends Component {
   constructor() {
     super();
     this.state = { Employees: [] }
@@ -19,31 +20,33 @@ class Employees extends Component{
 
   render() {
     return (
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          Teams
+      <MainContainer SideBar='Employees'>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Teams
       </div>
-        <div className="panel-body">
-          <div className="table-responsive overview-table">
-            <table className="table table-striped table-bordered">
-              <tbody>
-                {this.state.Employees.map((employee, index) => {
-                  return (
-                    <tr>
-                      <td className='hidden'>{employee._id}</td>
-                      <td>{employee.FirstName} {employee.LastName} </td>
-                      <td>{employee.Position.PositionName}</td>
-                      
-                    </tr>
-                  );
-                })}
+          <div className="panel-body">
+            <div className="table-responsive overview-table">
+              <table className="table table-striped table-bordered">
+                <tbody>
+                  {this.state.Employees.map((employee, index) => {
+                    return (
+                      <tr>
+                        <td className='hidden'>{employee._id}</td>
+                        <td>{employee.FirstName} {employee.LastName} </td>
+                        <td>{employee.Position.PositionName}</td>
 
-              </tbody>
-            </table>
+                      </tr>
+                    );
+                  })}
+
+                </tbody>
+              </table>
+            </div>
+            <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
           </div>
-          <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
         </div>
-      </div>
+      </MainContainer>
     );
   }
 }

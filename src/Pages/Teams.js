@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import MainContainer from '../DisplayItems/MainContainer';
 
 // import whatever else you like here
 
@@ -20,31 +21,34 @@ class Teams extends Component {
 
   render() {
     return (
-      <div className="panel panel-default">
-        <div className="panel-heading">
-          Teams
-      </div>
-        <div className="panel-body">
-          <div className="table-responsive overview-table">
-            <table className="table table-striped table-bordered">
-              <tbody>
-                {this.state.Teams.map((team, index) => {
-                  return (
-                    <tr>
-                      <td className='hidden'>{team._id}</td>
-                      <td>{team.TeamName}</td>
-                      <td>{team.Employees.length} Employees</td>
-                      
-                    </tr>
-                  );
-                })}
+      <MainContainer SideBar='Teams'>
 
-              </tbody>
-            </table>
-          </div>
-          <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
-        </div>
+        <div className="panel panel-default">
+          <div className="panel-heading">
+            Teams
       </div>
+          <div className="panel-body">
+            <div className="table-responsive overview-table">
+              <table className="table table-striped table-bordered">
+                <tbody>
+                  {this.state.Teams.map((team, index) => {
+                    return (
+                      <tr>
+                        <td className='hidden'>{team._id}</td>
+                        <td>{team.TeamName}</td>
+                        <td>{team.Employees.length} Employees</td>
+
+                      </tr>
+                    );
+                  })}
+
+                </tbody>
+              </table>
+            </div>
+            <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
+          </div>
+        </div>
+      </MainContainer>
     );
   }
 }

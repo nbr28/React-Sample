@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MainContainer from '../DisplayItems/MainContainer';
 // import whatever else you like here
 
 // Declare your Component here
@@ -8,9 +9,9 @@ class PageNotFound extends Component {
 
   render() {
     return (
-      <div>
+      <MainContainer>
         <h2>404 Page not found</h2>
-      </div>
+      </MainContainer>
     );
   }
 }

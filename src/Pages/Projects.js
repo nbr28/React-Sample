@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import momment from 'moment';
+import MainContainer from '../DisplayItems/MainContainer';
 // import whatever else you like here
 
 
@@ -32,7 +33,7 @@ class Projects extends Component {
 
   render() {
     return (
-      <div >
+      <MainContainer SideBar='Projects'>
         <h1>Projects</h1>
    
       <div className="table-responsive overview-table">
@@ -70,7 +71,7 @@ class Projects extends Component {
           </tbody>
         </table>
       </div>
-      </div>
+      </MainContainer>
     );
   }
 }
