@@ -3,6 +3,18 @@ import axios from 'axios';
 import momment from 'moment';
 // import whatever else you like here
 
+
+function DateDisplay (props){
+  const date = props.date;
+  if (date===null) { // evaluates to true if currentVideo is null
+    return <div>N/A</div>; 
+  }
+  return (
+    <div>{momment(date).format("ddd, MMMM Do YYYY")}</div>
+  );
+};
+
+
 // Declare your Component here
 class ProjectsPanel extends Component {
   constructor() {
@@ -46,11 +58,11 @@ class ProjectsPanel extends Component {
             {this.state.projects.map((project, index) => {
               return (
                 <tr>
-                  <td className='hidden'>{project._id}</td>
-                  <td>{project.ProjectName}</td>
-                  <td>{project.ProjectDescription}</td>
-                  <dateDisplay currentDate={project.ProjectStartDate}/>
-                  <dateDisplay currentDate={project.ProjectEndDate}/>
+                  <td className='hidden'>{index}</td>
+                  <td className='col-md-1'>{project.ProjectName}</td>
+                  <td className='col-md-9'>{project.ProjectDescription}</td>
+                  <td><DateDisplay date={project.ProjectStartDate}/></td>
+                  <td><DateDisplay date={project.ProjectEndDate}/></td>
                 </tr>
               );
             })}
@@ -63,14 +75,6 @@ class ProjectsPanel extends Component {
   }
 }
 
-function dateDisplay (currentDate){
-  if (!currentDate) { // evaluates to true if currentVideo is null
-    return <td>N/A</td>; 
-  }
-  return (
-    <td>{momment(currentDate).format("ddd, MMMM Do YYYY")}</td>
-  );
-};
 
 // export the component by name
 export default ProjectsPanel; 
