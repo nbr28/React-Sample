@@ -35,8 +35,7 @@ class Projects extends Component {
     return (
       <MainContainer SideBar='Projects'>
         <h1>Projects</h1>
-   
-      <div className="table-responsive overview-table">
+      <div className="table-responsive">
         <table className="table table-striped table-bordered">
           <thead>
             <tr>

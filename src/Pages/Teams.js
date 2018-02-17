@@ -22,47 +22,38 @@ class Teams extends Component {
   render() {
     return (
       <MainContainer SideBar='Teams'>
-
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            Teams
-      </div>
-          <div className="panel-body">
-            <div className="table-responsive overview-table">
-              <table className="table table-striped table-bordered">
-                <thead>
+        <h1> Teams</h1>
+        <div className="table-responsive ">
+          <table className="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Projects</th>
+                <th>Employees</th>
+                <th>Team Lead</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.Teams.map((team, index) => {
+                return (
                   <tr>
-                    <th>Name</th>
-                    <th>Projects</th>
-                    <th>Employees</th>
-                    <th>Team Lead</th>
+                    <td className='hidden'>{team._id}</td>
+                    <td>{team.TeamName}</td>
+                    <td>{team.Projects.map((project, index) => {
+                      return (
+                        <ul>
+                          <li>{project.ProjectName}</li>
+                        </ul>
+                      );
+                    })}</td>
+                    <td>{team.Employees.length} Employees</td>
+                    <td>{team.TeamLead.FirstName} {team.TeamLead.LastName}</td>
                   </tr>
-                </thead>
+                );
+              })}
 
-                <tbody>
-                  {this.state.Teams.map((team, index) => {
-                    return (
-                      <tr>
-                        <td className='hidden'>{team._id}</td>
-                        <td>{team.TeamName}</td>
-                        <td>{team.Projects.map((project, index) => {
-                          return (
-                            <ul>
-                              <li>{project.ProjectName}</li>
-                            </ul>
-                          );
-                        })}</td>
-                        <td>{team.Employees.length} Employees</td>
-                        <td>{team.TeamLead.FirstName} {team.TeamLead.LastName}</td>
-                      </tr>
-                    );
-                  })}
-
-                </tbody>
-              </table>
-            </div>
-            <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
-          </div>
+            </tbody>
+          </table>
         </div>
       </MainContainer>
     );
