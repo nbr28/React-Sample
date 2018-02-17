@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import momment from 'moment';
+
 // import whatever else you like here
 
 // Declare your Component here

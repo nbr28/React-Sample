@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectPanle from '../Panels/ProjectsPanel';
 import TeamsPanel from '../Panels/TeamsPanel';
+import EmployeesPanel from '../Panels/EmployeesPanel';
 // import whatever else you like here
 
 // Declare your Component here
@@ -17,7 +18,7 @@ class Overview extends Component {
          <TeamsPanel/>
           </div>
           <div className="col-md-4">
-          <p>Placeholder</p>
+         <EmployeesPanel/>
           </div>
         </div>
 
