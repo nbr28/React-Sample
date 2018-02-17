@@ -12,31 +12,37 @@ class ProjectsPanel extends Component {
 
   componentDidMount() {
     axios.get("https://teams-api012894.herokuapp.com/projects").then((res) => {
-      this.setState({ projects: res.data, });}.catch((err) => {
-        //TODO:Redirect to 404
-      });
+      this.setState({ projects: res.data, });
+    }).catch((err) => {
+      //TODO:Redirect to 404
     });
   }
+
   render() {
     return (
-      <div className="panel-body">
-        <div className="table-responsive overview-table">
-          <table className="table table-striped table-bordered">
-            <tbody>
-              {this.state.projects.map((project, index) => {
-                return (
-                  <tr>
-                    <td className='hidden'>{project._id}</td>
-                    <td>{project.ProjectName}</td>
-                    <td>{momment().diff(momment(project.ProjectStartDate))}</td>
-                  </tr>
-                );
-              })}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Projects
+      </div>
+        <div className="panel-body">
+          <div className="table-responsive overview-table">
+            <table className="table table-striped table-bordered">
+              <tbody>
+                {this.state.projects.map((project, index) => {
+                  return (
+                    <tr>
+                      <td className='hidden'>{project._id}</td>
+                      <td>{project.ProjectName}</td>
+                      <td>Active {momment().diff(momment(project.ProjectStartDate),'days')} Days</td>
+                    </tr>
+                  );
+                })}
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
+          <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
         </div>
-        <a href="/projects" className="btn btn-primary form-control">View All Project Data</a>
       </div>
     );
   }
