@@ -3,7 +3,7 @@ import axios from 'axios';
 // import whatever else you like here
 
 // Declare your Component here
-class EmployeesPanel extends Component{
+class Employees extends Component{
   constructor() {
     super();
     this.state = { Employees: [] }
@@ -49,4 +49,4 @@ class EmployeesPanel extends Component{
 }
 
 // export the component by name
-export default EmployeesPanel; 
+export default Employees; 

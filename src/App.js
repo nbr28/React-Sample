@@ -2,14 +2,36 @@ import React, { Component } from 'react';
 import MainContainer from './DisplayItems/MainContainer';
 import Overview from './DisplayItems/Overview';
 import Projects from './Pages/Projects';
+import Teams from './Pages/Teams';
+import Employees from './Pages/Employee';
+import PageNotFound from './Pages/PageNotFound'
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div>
         <MainContainer SideBar="Overview">
+          <Switch>
+            <Route exact path='/' render={() => (
+              <Overview />
+            )} />
+            <Route exact path='/Teams' render={() => (
+              <Teams />
+            )} />
+            <Route exact path='/Employees' render={() => (
+              <Employees />
+            )} />
+            <Route exact path='/Projects' render={() => (
+              <Projects />
+            )} />
+          </Switch>
+
           {/* <Overview /> */}
-        <Projects/>
+          {/* <Projects /> */}
+          {/* <Teams /> */}
+          {/* <Employees /> */}
+          {<PageNotFound />}
         </MainContainer>
         {/* <div className="container-fluid">
           <div className="row">

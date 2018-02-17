@@ -16,7 +16,7 @@ function DateDisplay (props){
 
 
 // Declare your Component here
-class ProjectsPanel extends Component {
+class Projects extends Component {
   constructor() {
     super();
     this.state = { projects: [] }
@@ -77,4 +77,4 @@ class ProjectsPanel extends Component {
 
 
 // export the component by name
-export default ProjectsPanel; 
+export default Projects; 

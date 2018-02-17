@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 // import whatever else you like here
 
 // Declare your Component here
-class EmployeesPanel extends Component{
+class Teams extends Component {
   constructor() {
     super();
-    this.state = { Employees: [] }
+    this.state = { Teams: [] }
   }
 
   componentDidMount() {
-    axios.get("https://teams-api012894.herokuapp.com/employees").then((res) => {
-      this.setState({ Employees: res.data, });
+    axios.get("https://teams-api012894.herokuapp.com/teams").then((res) => {
+      this.setState({ Teams: res.data, });
     }).catch((err) => {
       //TODO:Redirect to 404
     });
@@ -27,12 +28,12 @@ class EmployeesPanel extends Component{
           <div className="table-responsive overview-table">
             <table className="table table-striped table-bordered">
               <tbody>
-                {this.state.Employees.map((employee, index) => {
+                {this.state.Teams.map((team, index) => {
                   return (
                     <tr>
-                      <td className='hidden'>{employee._id}</td>
-                      <td>{employee.FirstName} {employee.LastName} </td>
-                      <td>{employee.Position.PositionName}</td>
+                      <td className='hidden'>{team._id}</td>
+                      <td>{team.TeamName}</td>
+                      <td>{team.Employees.length} Employees</td>
                       
                     </tr>
                   );
@@ -49,4 +50,4 @@ class EmployeesPanel extends Component{
 }
 
 // export the component by name
-export default EmployeesPanel; 
+export default Teams; 
