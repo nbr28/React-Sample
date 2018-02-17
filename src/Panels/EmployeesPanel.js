@@ -22,7 +22,7 @@ class EmployeesPanel extends Component{
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          Teams
+          Employees
       </div>
         <div className="panel-body">
           <div className="table-responsive overview-table">
