@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProjectPanle from '../Panels/ProjectsPanel';
 // import whatever else you like here
 
 // Declare your Component here
@@ -9,7 +10,7 @@ class Overview extends Component {
         <h1 className='page-header'>Overview</h1>
         <div className="row">
           <div className="col-md-4">
-          <p>Placeholder</p>
+        <ProjectPanle/>
           </div>
           <div className="col-md-4">
           <p>Placeholder</p>
