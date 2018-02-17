@@ -20,8 +20,8 @@ class TeamsPanel extends Component {
 
   render() {
     return (
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div className="panel panel-default">
+        <div className="panel-heading">
           Teams
       </div>
         <div className="panel-body">

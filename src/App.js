@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import MainContainer from './DisplayItems/MainContainer';
 import Overview from './DisplayItems/Overview';
-
+import Projects from './Pages/Projects';
 
 class App extends Component {
   render() {
     return (
       <div>
         <MainContainer SideBar="Overview">
-          <Overview />
+          {/* <Overview /> */}
+        <Projects/>
         </MainContainer>
         {/* <div className="container-fluid">
           <div className="row">
